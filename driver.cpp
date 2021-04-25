@@ -106,6 +106,7 @@ int main()
                 cout << "Invalid option. Please slect a valid option." << endl;
                 PrintMenu();
                 cin >> userInput;
+                cout << "edit test" << endl;
         }
     }
 
