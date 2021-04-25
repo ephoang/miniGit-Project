@@ -37,11 +37,12 @@ void miniGit::RemoveFile(singlyNode* node, string filename)
     {
         while (node->next != NULL)
         {
-            node->data = node->next->fileName;//check if fileName si that right thing to put
+            node->data = node->next->fileName;//check if fileName is that right thing to put
             prev = node;
             node = node->next;
         }
         prev->next = NULL;
+        cout << "File Deleted." << endl;
     }
     else
     {
