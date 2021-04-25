@@ -24,7 +24,10 @@ class miniGit{
     private:
 
     public:
-        
+        void AddFile();
+        void Remove File();
+        void CommitCHanges();
+        int counter(int);
 };
 
 #endif
