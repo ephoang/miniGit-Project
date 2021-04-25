@@ -18,6 +18,7 @@ bool miniGit::search(singlyNode* head, string file)
 
 void miniGit::AddRepostitory(string repname)
 {
+    int *commitNumber = 0;
 }
 
 void miniGit::RemoveRepostitory(string repname)
@@ -56,7 +57,7 @@ void miniGit::CommitChange()
     
 }
 
-int miniGit::counter(int commitNumber)
+int miniGit::counter(int commitNumber)//probably needs to be passed by reference
 {
     commitNumber++;
     return commitNumber;
