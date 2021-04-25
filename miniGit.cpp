@@ -2,6 +2,20 @@
 #include <iostream>
 using namespace std;
 
+bool miniGit::search(singlyNode* head, string file)
+{
+    singlyNode* curr = head;
+    while(curr != NULL)
+    {
+        if(curr->key = file)
+        {
+            return true;
+        }
+        curr = curr->next;
+    }
+    return false;
+}
+
 void miniGit::AddRepostitory(string repname)
 {
 }
@@ -14,8 +28,25 @@ void miniGit::AddFile(string filename)
 {
 }
 
-void miniGit::RemoveFile(string filename)
+void miniGit::RemoveFile(singlyNode* node, string filename)
 {
+    singlyNode* prev;
+    bool found = search(*head, filename);
+    
+    if(found == true)
+    {
+        while (node->next != NULL)
+        {
+            node->data = node->next->fileName;//check if fileName si that right thing to put
+            prev = node;
+            node = node->next;
+        }
+        prev->next = NULL;
+    }
+    else
+    {
+        cout << "File not found in current directory." << endl;
+    }
 }
 
 void miniGit::CommitChange()
