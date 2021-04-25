@@ -7,11 +7,13 @@ using namespace std;
 void PrintMenu()
 {
     cout << "0 - Displays menu options" << endl;
-    cout << "1 - Adds a file to the repository" << endl;
-    cout << "2 - Removes a file from the repository" << endl;
-    cout << "3 - Commit your changes to the file" << endl;
-    cout << "4 - Checkout previous versions of the repository" << endl;
-    cout << "5 - Leave the program" << endl;
+    cout << "1 - Add a repository" << endl;
+    cout << "2 - Adds a file to the repository" << endl;
+    cout << "3 - Remove a repository" << endl;
+    cout << "4 - Removes a file from the repository" << endl;
+    cout << "5 - Commit your changes to the file" << endl;
+    cout << "6 - Checkout previous versions of the repository" << endl;
+    cout << "7 - Leave the program" << endl;
     cout << endl;
     cout << "Enter your selection: " << endl;
 }
@@ -21,6 +23,7 @@ void Checkout()
     int input;
 
     cout << "Enter commit number: " << endl;
+    cin >> input;
     //if(valid commit)
         //overwrite files by files in directory
 }
@@ -42,12 +45,8 @@ void RemoveFile()
 
     cout << "Enter name of file you want to delete: " << endl;
     cin >> fileName;
-    //check SLL for file name in current directory
-    // if found
-        //delete node
-        // cout << "File Deleted." << endl;
-    // if not found
-        // cout << "File not found in current directory." << endl;
+    
+    RemoveFile(*node, fileName);
 }
 
 void AddFile()
@@ -70,11 +69,11 @@ int main()
     string changeMind;
     
     
-    cout << "Welcome to miniGit! Please enter your selction below." << endl;
+    cout << "Welcome to miniGit! We recommend you create a repository first. Please enter your selction below." << endl;
     PrintMenu();
     cin >> userInput;
     
-    while(userInput != 5)
+    while(userInput != 7)
     {
         switch(userInput)
         {
@@ -82,18 +81,26 @@ int main()
                 PrintMenu();
                 cin >> userInput;
             case 1:
-                void AddFile();
+                //add repository
                 PrintMenu();
                 cin >> userInput;
             case 2:
-                void RemoveFile();
+                void AddFile();
                 PrintMenu();
                 cin >> userInput;
-            case 3:
-                void Commit();
+            case 3: 
+                //remove repository
                 PrintMenu();
                 cin >> userInput;
             case 4:
+                void RemoveFile();
+                PrintMenu();
+                cin >> userInput;
+            case 5:
+                void Commit();
+                PrintMenu();
+                cin >> userInput;
+            case 6:
                 cout << "You will lose any local changes if you haven't made a commit. Do you want to continue?\n yes or no" << endl;
                 cin >> changeMind;
                 if(changeMind == "yes" || changeMind =="Yes")
@@ -102,13 +109,15 @@ int main()
                 }
                 PrintMenu();
                 cin >> userInput;
+            case 7:
+                break;
             default:
                 cout << "Invalid option. Please slect a valid option." << endl;
                 PrintMenu();
                 cin >> userInput;
         }
     }
-
+    //delete and clear everything
     cout << "Thank you for visting. Goodbye!" << endl;
 
     return 0;
