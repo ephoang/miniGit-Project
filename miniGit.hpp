@@ -22,9 +22,10 @@ struct singlyNode{
 
 class miniGit{
     private:
+        singlyNode* head;
 
     public:
-        bool search(singlyNode*, string);
+        bool search(string file);
         void AddRepoitory(string);
         void RemoveRpository(string);//probally need to call memory, same as addrepository
         void AddFile(string);// call memory? from SLL
