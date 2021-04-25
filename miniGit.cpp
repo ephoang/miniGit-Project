@@ -53,9 +53,11 @@ void miniGit::RemoveFile(singlyNode* node, string filename)
 
 void miniGit::CommitChange()
 {
+    
 }
 
-int miniGit::counter(int versionnum)
+int miniGit::counter(int commitNumber)
 {
-    
+    commitNumber++;
+    return commitNumber;
 }
