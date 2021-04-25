@@ -24,9 +24,11 @@ class miniGit{
     private:
 
     public:
-        void AddFile(string);
+        void AddRepoitory(string);
+        void RemoveRpository(string);//probally need to call memory, same as addrepository
+        void AddFile(string);// call memory? from SLL
         void RemoveFile(string);
-        void CommitChange();
+        void CommitChange();// def call memory
         int counter(int);
 };
 
