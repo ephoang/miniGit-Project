@@ -26,6 +26,7 @@ void miniGit::RemoveRepostitory(string repname)
 
 void miniGit::AddFile(string filename)
 {
+    
 }
 
 void miniGit::RemoveFile(singlyNode* node, string filename)
